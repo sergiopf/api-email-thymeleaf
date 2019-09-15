@@ -2,7 +2,7 @@
 
 ### Test
 
-API rest which sends an html email using thymeleaf templates, email subject is internationalized too at file Subject_xx using template name.
+API rest which sends an html email using spring boot and thymeleaf templates, email subject is internationalized too at file Subject_xx using template name.
 
 Just configure mail.server.username and mail.server.password at emailconfig.properties (this example uses gmail, you should configure another properties like port if you use another email server)
 
