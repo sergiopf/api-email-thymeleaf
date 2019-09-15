@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+    <head>
+        <title data-th-remove="all">Template for HTML email</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+		<table border="0" align="center" width="670" cellspacing="0" cellpadding="0" style="border:1px solid #cccccc;background-color:#ffffff">
+			<tbody>
+			<tr>
+				<td>
+					<table border="0" width="670" cellspacing="0" cellpadding="0" style="background-color:#ffffff">
+						<tbody>
+							<tr>
+								<td style="width:76px"> &nbsp; </td>
+								<td width="442" height="76" style="color:#333333">
+									<table border="0" cellspacing="0" cellpadding="0">
+										<tbody>
+											<tr>
+												<td>APPLICATION TEST</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td style="border-top:1px solid #d9d9d9;background-color:#ffffff" colspan="4">&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+				<td rowspan="3"></td>
+			</tr>
+			<tr>
+				<td style="background:#ffffff">
+					<table border="0" width="670" cellspacing="0" cellpadding="0" style="background-color:#ffffff">
+						<tbody>
+							<tr>
+								<td>
+									<table border="0" align="center" width="550" cellspacing="0" cellpadding="0">
+										<tbody>
+											<tr>
+												<td height="20" style="min-height:20px;font-size:13px"></td>
+											</tr>
+											<tr valign="top">
+												<td>        
+													<p th:text="#{greeting(${name})}">
+											            Hello, Sergio!
+											        </p>
+											        <p th:text="#{congratulations}">
+											        	Congratulations, your account is activated.
+											        </p>
+											        <span data-th-text="${#dates.format(subscriptionDate)}">31-12-2019</span>
+											        <p th:text="#{hobbies}">Your hobbies are:</p>
+								                        <ul data-th-remove="all-but-first">
+								                            <li data-th-each="hobby : ${hobbies}"
+								                                data-th-text="${hobby}">Reading</li>
+								                            <li>Writing</li>
+								                            <li>Boxing</li>
+								                        </ul>
+							                        <p>
+										        </td>
+											</tr>
+											<tr>
+												<td>
+													<hr style="min-height:1px;border:0px;margin:0px;background-color:#e3e3e3;margin:20px 0">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p th:text="#{thanks}">
+														Thanks for trusting us.
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<td height="25"></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		
+			<tr>
+				<td>
+					<table border="0" width="670" cellspacing="0" cellpadding="0" style="background-color:#8af56f;border-top-color:#dddddd;border-top-style:solid;border-top-width:1px;font-family:Arial,sans-serif">
+					<tbody>
+						<tr>
+							<td th:insert="footer :: footer">
+		
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

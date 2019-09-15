@@ -1,0 +1,7 @@
+target/
+bin/
+logs/
+.settings/
+.classpath
+.project
+org.eclipse.*
